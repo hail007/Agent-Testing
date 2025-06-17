@@ -1,6 +1,6 @@
 # Simple To-Do List Web App
 
-A basic to-do list application built with HTML, CSS, and JavaScript.
+A basic to-do list application built with HTML, CSS, and TypeScript.
 
 ## Usage
 
@@ -8,11 +8,15 @@ A basic to-do list application built with HTML, CSS, and JavaScript.
    ```sh
    npm install
    ```
-2. Start the server:
+2. Build the front end:
+   ```sh
+   npm run build
+   ```
+3. Start the server:
    ```sh
    npm start
    ```
-3. Open <http://localhost:3000> in your browser.
+4. Open <http://localhost:3000> in your browser.
 
 ## Backend API
 
