@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const taskInput = document.getElementById('task-input');
-  const addBtn = document.getElementById('add-btn');
-  const taskList = document.getElementById('task-list');
+  const taskInput = document.getElementById('task-input') as HTMLInputElement;
+  const addBtn = document.getElementById('add-btn') as HTMLButtonElement;
+  const taskList = document.getElementById('task-list') as HTMLUListElement;
 
   fetch('/api/tasks')
     .then((res) => res.json())
-    .then((tasks) => {
+    .then((tasks: { id: string; text: string; completed: boolean }[]) => {
       tasks.forEach(renderTask);
     });
 
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         body: JSON.stringify({ text }),
       })
         .then((res) => res.json())
-        .then((task) => {
+        .then((task: { id: string; text: string; completed: boolean }) => {
           renderTask(task);
           taskInput.value = '';
           taskInput.focus();
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  function renderTask(task) {
+  function renderTask(task: { id: string; text: string; completed: boolean }) {
     const li = document.createElement('li');
     li.className = 'task-item';
     if (task.completed) {
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         body: JSON.stringify({ completed: !task.completed }),
       })
         .then((res) => res.json())
-        .then((updatedTask) => {
+        .then((updatedTask: { completed: boolean }) => {
           task.completed = updatedTask.completed;
           li.classList.toggle('completed');
         });
