@@ -84,3 +84,14 @@ h1 {
 .delete-btn:hover {
   color: #c82333;
 }
+
+/* Make the task-text button appear as plain text but be clickable/accessibile */
+.task-text {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
