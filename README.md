@@ -8,7 +8,11 @@ A basic to-do list application built with HTML, CSS, and JavaScript.
    ```sh
    npm install
    ```
-2. Start the server:
+2. Build the front-end:
+   ```sh
+   npm run build
+   ```
+3. Start the server:
    ```sh
    npm start
    ```
@@ -23,8 +27,3 @@ The backend provides a simple RESTful API for managing tasks:
 - `PATCH /api/tasks/:id` - Update a task's completion status. JSON body: `{ "completed": true }`.
 - `DELETE /api/tasks/:id` - Delete a task.
 
-## Frontend Usage
-
-1. Enter a task in the input field and click "Add" or press Enter.
-2. Click on a task to toggle its completion state.
-3. Click the "×" button next to a task to delete it.
